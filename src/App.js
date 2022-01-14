@@ -76,7 +76,7 @@ function App(){
             <Container>
                 <Pop>
                     <Title>Note App</Title>
-                    <Router>
+                    <Router basename={process.env.PUBLIC_URL}>
                         <Switch>
                             <Route path="/" exact>
                                 <Home />
