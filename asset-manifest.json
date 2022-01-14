@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Note-App/static/js/main.bd198bce.js",
+    "main.js": "/Note-App/static/js/main.0d921be5.js",
     "index.html": "/Note-App/index.html",
-    "main.bd198bce.js.map": "/Note-App/static/js/main.bd198bce.js.map"
+    "main.0d921be5.js.map": "/Note-App/static/js/main.0d921be5.js.map"
   },
   "entrypoints": [
-    "static/js/main.bd198bce.js"
+    "static/js/main.0d921be5.js"
   ]
 }
