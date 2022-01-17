@@ -76,15 +76,15 @@ function App(){
             <Container>
                 <Pop>
                     <Title>Note App</Title>
-                    <Router basename={process.env.PUBLIC_URL}>
+                    <Router>
                         <Switch>
                             <Route path="/" exact>
                                 <Home />
                             </Route>
-                            <Route path="/writeNote">
+                            <Route path="/writeNote" exact>
                                 <WriteNote />
                             </Route>
-                            <Route path="/note/:noteIndex">
+                            <Route path="/note/:noteIndex" exact>
                                 <Note />
                             </Route>
                         </Switch>
