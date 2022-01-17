@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import Note from "./Components/Note";
@@ -76,15 +76,15 @@ function App(){
             <Container>
                 <Pop>
                     <Title>Note App</Title>
-                    <Router>
+                    <Router basename={process.env.PUBLIC_URL}>
                         <Switch>
                             <Route path="/" exact>
                                 <Home />
                             </Route>
-                            <Route path="/writeNote" exact>
+                            <Route path="/writeNote">
                                 <WriteNote />
                             </Route>
-                            <Route path="/note/:noteIndex" exact>
+                            <Route path="/note/:noteIndex">
                                 <Note />
                             </Route>
                         </Switch>
