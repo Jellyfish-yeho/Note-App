@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
 import Button from "../Components/Button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { GetNote, SetNote } from "../Components/LocalStorage";
-import { useEffect } from "react/cjs/react.development";
 
 const Form = styled.form`
     margin-bottom: 5rem;
@@ -32,7 +31,7 @@ const InputArea = styled.input`
     border-bottom: 0.2rem solid #f6a89e;
     background-color: transparent;
     width: 100%;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     margin: 2rem 0;
     font-size: 1.2rem;
     &:focus {
@@ -46,7 +45,7 @@ const TextArea = styled.textarea`
     border-bottom: 0.2rem solid #f6a89e;
     background-color: transparent;
     width: 100%;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     margin: 2rem 0;
     font-size: 1.2rem;
     &:focus {
@@ -64,7 +63,7 @@ function WriteNote() {
     const titleSet = (e) => setTitle(e.target.value);
     const contentSet = (e) => {
         setContent(e.target.value);
-        setTextAreaHeight("auto");      
+        setTextAreaHeight("auto");
     };
     let note = {};
     let NoteApp = GetNote();
@@ -83,8 +82,8 @@ function WriteNote() {
         SetNote(NoteApp);
         history.push("/");
     };
-    useEffect(()=>{
-        setTextAreaHeight(`${refTextArea.current.scrollHeight}px`)
+    useEffect(() => {
+        setTextAreaHeight(`${refTextArea.current.scrollHeight}px`);
     }, [content]);
 
     return (
@@ -107,7 +106,7 @@ function WriteNote() {
                         name="content"
                         onChange={contentSet}
                         rows={1}
-                        style={{height: textAreaHeight}}
+                        style={{ height: textAreaHeight }}
                         value={content}
                         required
                     ></TextArea>
